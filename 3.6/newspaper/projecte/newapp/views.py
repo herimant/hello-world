@@ -5,7 +5,7 @@ from datetime import datetime
 
 class PostList(ListView):
     model = Post
-    ordering = '-dateCreation'
+    ordering = '-dataCreation'
     template_name = 'news.html'
     context_object_name = 'news'
 

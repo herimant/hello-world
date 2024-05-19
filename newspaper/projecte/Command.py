@@ -37,20 +37,20 @@ Comment.objects.create(commentPost=Post.objects.get(id=3), commentUser=Author.ob
 Comment.objects.create(commentPost=Post.objects.get(id=1), commentUser=Author.objects.get(id=2).authorUser, text='sometext')
 
 '7.Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.'
-Comment.objects.get(id=1).like()
-Comment.objects.get(id=2).like()
-Comment.objects.get(id=3).like()
-Comment.objects.get(id=3).like()
-Comment.objects.get(id=4).like()
-Comment.objects.get(id=2).dislike()
-Comment.objects.get(id=4).dislike()
-Post.objects.get(id=1).like()
-Post.objects.get(id=1).like()
-Post.objects.get(id=2).like()
-Post.objects.get(id=3).like()
-Post.objects.get(id=3).like()
-Post.objects.get(id=1).dislike()
-Post.objects.get(id=2).dislike()
+Comment.objects.get(id=1).Like()
+Comment.objects.get(id=2).Like()
+Comment.objects.get(id=3).Like()
+Comment.objects.get(id=3).Like()
+Comment.objects.get(id=4).Like()
+Comment.objects.get(id=2).Dislike()
+Comment.objects.get(id=4).Dislike()
+Post.objects.get(id=1).Like()
+Post.objects.get(id=1).Like()
+Post.objects.get(id=2).Like()
+Post.objects.get(id=3).Like()
+Post.objects.get(id=3).Like()
+Post.objects.get(id=1).Dislike()
+Post.objects.get(id=2).Dislike()
 
 '8.Обновить рейтинги пользователей.'
 Author.objects.get(id=1).update_rating()
@@ -62,9 +62,9 @@ Author.objects.order_by('-ratingAuthor').values('authorUser__username','ratingAu
 '10.Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи,\
  основываясь на лайках/дислайках к этой статье.'
 Post.objects.order_by('-rating').values('dataCreation','author__authorUser__username','rating','title')[0]
-Post.objects.order_by('-rating').first().preview()
+Post.objects.order_by('-rating').first().Preview()
 
 '11.Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.'
 best_post=Post.objects.order_by('-rating').first()
 best_post.comment_set.all()
-best_post.comment_set.values('dataCreation', 'user__username','rating','text')
+best_post.comment_set.values('dataCreation', 'user__username', 'rating', 'text')

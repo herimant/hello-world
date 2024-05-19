@@ -152,3 +152,13 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
+
+SOCIALACCOUNT_PROVIDERS = {
+    'yandex': {
+        'APP': {
+            'client_id': 'd90a1ad31c8644d9b48639d934e37dd8',
+            'secret': 'a15209d7094d463dad464e4e93dc82c9',
+            'key': ''
+        }
+    }
+}

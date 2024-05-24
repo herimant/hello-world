@@ -7,7 +7,7 @@ from django.conf import settings
 
 from .models import Post
 
-@receiver(m2m_changed, sender=Post.category.through)
+@receiver(m2m_changed, sender=Post.postCategory.through)
 def notify_about_new_post(sender, instance, **kwargs):
     if kwargs['action'] == 'post_add':
         categories = instance.category.all()

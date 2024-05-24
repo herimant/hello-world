@@ -29,7 +29,7 @@ class CustomSignupForm(SignupForm):
         common_users = Group.objects.get(name="common users")
         user.groups.add(common_users)
 
-        subject = 'Добро пожаловать в наш интернет-магазин!'
+        subject = 'Добро пожаловать в наш новостной портал!'
         text = f'{user.username}, вы успешно зарегистрировались на сайте!'
         html = (
             f'<b>{user.username}</b>, вы успешно зарегистрировались на '

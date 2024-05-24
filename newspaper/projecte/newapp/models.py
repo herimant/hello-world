@@ -24,30 +24,41 @@ class Author (models.Model):
         self.save()
 
     def __str__(self):
-        return f'{self.authorUser.username}'
+        return self.authorUser.username
+
+    class Meta:
+        verbose_name = 'Автор'
+        verbose_name_plural = 'Авторы'
 
 
 class Category (models.Model):
     name = models.CharField(max_length=64, unique=True)
+    discription = models.TextField(verbose_name='Описание категории')
+    subscribers = models.ManyToManyField(User, blank=True, related_name='categories', verbose_name='Подписчики', through='Subscriber')
 
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
 
 class Post (models.Model):
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     NEWS = 'NW'
     ARTICLE = 'AR'
     CATEGORY_CHOICES =[
         (NEWS, 'Новость'),
         (ARTICLE, 'Статья'),
     ]
-    categoryType = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=ARTICLE)
-    dataCreation = models.DateTimeField(auto_now_add=True)
-    postCategory = models.ManyToManyField(Category, through='PostCategory')
-    title = models.CharField(max_length=128)
-    text = models.TextField()
-    rating = models.SmallIntegerField(default=0)
+    categoryType = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=ARTICLE, verbose_name='Тип публикации')
+    dataCreation = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время создания публикации')
+    postCategory = models.ManyToManyField(Category, through='PostCategory', verbose_name='Категория публикации')
+    title = models.CharField(max_length=128, verbose_name='Заголовок публикации')
+    text = models.TextField(verbose_name='Текст публикации')
+    rating = models.SmallIntegerField(default=0, verbose_name='Рейтинг публикации')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Автор публикации')
+
 
     def Like(self):
         self.rating += 1
@@ -61,10 +72,15 @@ class Post (models.Model):
         return self.text[0:123]+'...'
 
     def __str__(self):
-        return f'{self.title.title()}'
+        return self.title
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
+
+    class Meta:
+        ordering = ['-dataCreation',]
+        verbose_name = 'Публикация'
+        verbose_name_plural = 'Публикации'
 
 
 class PostCategory (models.Model):
@@ -73,7 +89,6 @@ class PostCategory (models.Model):
 
     def __str__(self):
         return f'{self.postThrough.title}: {self.categoryThrough.name}'
-
 
 
 class Comment (models.Model):
@@ -93,6 +108,11 @@ class Comment (models.Model):
 
     def __str__(self):
         return f'{self.text}'
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
 
 class Subscriber(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscriptions',)

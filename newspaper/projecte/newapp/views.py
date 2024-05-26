@@ -110,7 +110,7 @@ def subscriptions(request):
     ).order_by('name')
     return render(
         request,
-        'post/subscriptions.html',
+        'subscriptions.html',
         # 'account/personal_cabinet.html',
         {'categories': categories_with_subscriptions},
     )

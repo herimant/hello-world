@@ -12,7 +12,7 @@ from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
 
-from post.models import Post, Category
+from newapp.models import Post, Category
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ def my_job():
     for subscriber in subscribers_emails:
         subject = 'Статьи за неделю!!!',
         text_content = render_to_string(
-            'post/deily_post.html',
+        'newapp/deily_post.html',
                 {
                     'link': settings.SITE_URL,
                     'posts': posts,

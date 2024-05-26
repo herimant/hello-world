@@ -24,7 +24,7 @@ class Author (models.Model):
         self.save()
 
     def __str__(self):
-        return self.authorUser.username
+        return f'{self.authorUser.username}'
 
     class Meta:
         verbose_name = 'Автор'
@@ -33,7 +33,7 @@ class Author (models.Model):
 
 class Category (models.Model):
     name = models.CharField(max_length=64, unique=True)
-    discription = models.TextField(verbose_name='Описание категории')
+    discription = models.TextField(default='Default description', verbose_name='Описание категории')
     subscribers = models.ManyToManyField(User, blank=True, related_name='categories', verbose_name='Подписчики', through='Subscriber')
 
     def __str__(self):
@@ -72,7 +72,7 @@ class Post (models.Model):
         return self.text[0:123]+'...'
 
     def __str__(self):
-        return self.title
+        return f'{self.title.title()}'
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
@@ -89,6 +89,10 @@ class PostCategory (models.Model):
 
     def __str__(self):
         return f'{self.postThrough.title}: {self.categoryThrough.name}'
+
+    class Meta:
+        verbose_name = 'Категория публикации'
+        verbose_name_plural = 'Категории публикаций'
 
 
 class Comment (models.Model):

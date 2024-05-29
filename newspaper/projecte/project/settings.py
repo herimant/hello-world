@@ -183,3 +183,9 @@ MANAGERS = (
 ADMINS = (
     ('vasy', 'anton@yandex.ru'),
 )
+
+CELERY_BROKER_URL = 'redis-16161.c91.us-east-1-3.ec2.redns.redis-cloud.com:16161'
+CELERY_RESULT_BACKEND = 'redis-16161.c91.us-east-1-3.ec2.redns.redis-cloud.com:16161'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

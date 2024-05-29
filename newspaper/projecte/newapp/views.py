@@ -111,6 +111,5 @@ def subscriptions(request):
     return render(
         request,
         'subscriptions.html',
-        # 'account/personal_cabinet.html',
         {'categories': categories_with_subscriptions},
     )

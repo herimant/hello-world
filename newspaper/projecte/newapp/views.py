@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.cache import cache_page
 
 
 class PostList(ListView):
@@ -85,6 +86,7 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
 
 @login_required
 @csrf_protect
+@cache_page(60 * 15)
 def subscriptions(request):
     if request.method == 'POST':
         # user = request.user

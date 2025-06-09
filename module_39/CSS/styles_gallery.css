@@ -1,0 +1,123 @@
+@import "../fonts.css";
+@import "../styles_general.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neucha';
+    color: #040e66;
+    font-size: 50px;
+    font-weight: 400;
+    background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+
+.gallery {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    
+}
+
+.gallery_title {
+    font-family: 'Neucha';
+    font-size: 80px;
+    font-weight: 700;
+    color: #040e66;  
+    margin-bottom: 20px;
+    text-align: center;   
+}
+
+.gallery_form {
+    display: grid;
+    justify-content: center;
+    justify-items: center;    
+}
+
+.gallery_from_label {
+    text-align: center;
+        
+}
+
+.gallery_form_select {
+    text-align: center;
+    width: 200px;
+    font-family: 'Neucha';
+    font-size: 30px;
+    font-weight: 400;
+    color: #040e66; 
+    padding: 5px;
+    border: 2px solid #03078a;
+    border-radius: 5px;
+    margin-bottom: 20px; 
+    margin-top: 30px;   
+}
+
+.gallery_form_button {
+    width: 200px;
+    background-color: #01205a;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Neucha';
+    font-size: 25px;
+    font-weight: 300;
+    margin: 4px 2px;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.gallery_loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;    
+}
+
+.gallery_img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    border: 10px dotted #03078a;
+}    
+
+.gallery_img_item {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;    
+}
+
+.gallery_img_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }    
+}
+
+@media screen and (max-width: 600px){
+    .gallery_img_item {
+        width: 150px;
+        height: 150px;
+    }   
+}
+
+.none {
+    display: none;
+}

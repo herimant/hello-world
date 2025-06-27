@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Размеры экрана</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .screen-info-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #28a745;
+            color: white;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .screen-info-button:hover {
+            background-color: #218838;
+        }
+
+        .screen-info-button:active {
+            background-color: #1e7e34;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <button id="showScreenSize" class="screen-info-button">Показать размеры экрана</button>
+
+    <script>
+        // Ждем полной загрузки DOM, прежде чем начать работу со скриптом
+        document.addEventListener('DOMContentLoaded', () => {
+            // Получаем ссылку на кнопку по ее ID
+            const button = document.getElementById('showScreenSize');
+
+            // Добавляем слушатель события 'click' к кнопке
+            button.addEventListener('click', () => {
+                // Получаем ширину и высоту экрана
+                const screenWidth = window.screen.width;
+                const screenHeight = window.screen.height;
+
+                // Получаем ширину и высоту видимой области окна браузера (viewport)
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+
+                // Формируем сообщение для alert
+                const message = `
+                    Размеры всего экрана:
+                    Ширина: ${screenWidth}px
+                    Высота: ${screenHeight}px
+
+                    Размеры видимой части окна (viewport):
+                    Ширина: ${viewportWidth}px
+                    Высота: ${viewportHeight}px
+                `;
+
+                // Выводим данные с помощью alert
+                alert(message);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный Слайдер</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="slider-wrapper">
+        <nav class="slider-navigation-links">
+            <a href="#" data-slide="0" class="active">Rostov-on-Don, Admiral</a>
+            <a href="#" data-slide="1">Sochi Thieves</a>
+            <a href="#" data-slide="2">Rostov-on-Don Patriotic</a>
+        </nav>
+
+        <div class="slider-main-area">
+            <div class="slider-info">
+                <h1 class="slider-heading">Completed  projects</h1>
+                <div class="slider-underline"></div>
+                <p class="slider-description">
+                    Only a small part of the work performed by our company is presented on the site.
+                    For 14 years on in the construction market we have made happy more than 1000 families
+                </p>
+
+                <div class="slider-details">
+                    <div class="detail-item">
+                        <div class="detail-label">City:</div>
+                        <div class="detail-value">Rostov-on-Don<br>LCD admiral</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">apartment area:</div>
+                        <div class="detail-value">81 m2</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Repair time:</div>
+                        <div class="detail-value">3.5 months</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Repair Cost:</div>
+                        <div class="detail-value">Upon request</div>
+                    </div>
+                </div>
+
+                <div class="slider-controls-bottom">
+                    <button class="slider-arrow prev">&lt;</button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="slider-arrow next">&gt;</button>
+                </div>
+            </div>
+
+            <div class="slider-images-container">
+                <div class="slider-content">
+                    <img class="slide-image active" src="img/Mask Group.png" alt="Изображение 1">
+                    <img class="slide-image" src="img/Mask Group2.png" alt="Изображение 2">
+                    <img class="slide-image" src="img/Mask Group3.png" alt="Изображение 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

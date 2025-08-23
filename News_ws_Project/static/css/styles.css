@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#news-list {
+    list-style: none;
+    padding: 0;
+}
+
+#news-list li {
+    background: #e0f7fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
+}

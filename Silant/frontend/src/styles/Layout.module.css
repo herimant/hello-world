@@ -1,0 +1,47 @@
+.layout {
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  flex: 1;
+  width: 100%;
+  padding: 0; /* Убираем padding */
+}
+
+/* Footer Styles */
+.footer {
+  background: #163e6c;
+  color: white;
+  padding: 20px 0; /* Уменьшаем padding */
+
+}
+
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.footerLeft, .footerRight {
+  color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+

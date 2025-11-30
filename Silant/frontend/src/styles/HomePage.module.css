@@ -1,0 +1,539 @@
+
+/* ИСПРАВЛЕНИЕ СКРОЛЛА - убираем min-height */
+.container {
+  background: #ffffff;
+  font-family: "PT Astra Sans", Arial, sans-serif;
+}
+
+/* Секция с таблицей машин */
+.machinesSection {
+  padding: 20px 0;
+  background: white;
+  margin-bottom: 0;
+}
+
+.machinesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.machinesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.machinesTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* НОВЫЕ СТИЛИ ДЛЯ ФОРМЫ ПОИСКА ИЗ МАКЕТА */
+.filtersSection {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.filtersTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ПРОСТАЯ ФОРМА ПОИСКА */
+.searchForm {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.searchInputGroup {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.searchButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchButton:hover {
+  background: #2563eb;
+}
+
+.searchButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  background: #f3f4f6;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resetButton:hover {
+  background: #e5e7eb;
+}
+
+/* СООБЩЕНИЕ ОБ УСПЕХЕ */
+.successMessage {
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+/* УПРОЩЕННЫЕ СТИЛИ ТАБЛИЦЫ ИЗ МАКЕТА */
+.tableContainer {
+  border: none;
+  box-shadow: none;
+  background: white;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.machinesTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+  min-width: 1000px;
+}
+
+.tableHeader {
+  background: #f3f4f6;
+}
+
+.tableHeaderCell {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.tableRow {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.tableRow:hover {
+  background: #f9fafb;
+}
+
+.tableCell {
+  padding: 1rem;
+  color: #374151;
+  vertical-align: top;
+}
+
+.serialCell {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 18px;
+}
+
+.componentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.componentModel {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.componentSerial {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-family: monospace;
+}
+
+.axlesInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.axleItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.axleLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.axleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tableFooter {
+  background: #f8fafc;
+  padding: 20px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.tableInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tableCount {
+  font-weight: 600;
+  color: #374151;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.tableNote {
+  color: #6b7280;
+  font-size: 14px;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+/* Состояния загрузки и ошибок */
+.loadingState,
+.errorState,
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 24px;
+}
+
+.loadingText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3b82f6;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.errorIcon,
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.errorIcon {
+  color: #dc2626;
+}
+
+.emptyIcon {
+  color: #6b7280;
+}
+
+.errorTitle,
+.emptyTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.errorTitle {
+  color: #dc2626;
+}
+
+.emptyTitle {
+  color: #374151;
+}
+
+.errorText,
+.emptyText {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.retryButton {
+  padding: 12px 24px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "PT Astra Sans", system-ui, sans-serif;
+}
+
+.retryButton:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .machinesContainer {
+    padding: 0 1rem;
+  }
+  
+  .machinesTitle {
+    font-size: 1.5rem;
+  }
+  
+  .searchInputGroup {
+    flex-direction: column;
+  }
+  
+  .machinesTable {
+    font-size: 0.875rem;
+    min-width: 800px;
+  }
+  
+  .tableHeaderCell,
+  .tableCell {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .tableInfo {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .filtersSection {
+    padding: 1.5rem;
+  }
+}
+
+/* Добавить в конец HomePage.module.css: */
+
+/* Адаптивность для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .machinesContainer {
+    padding: 0 1.5rem;
+  }
+  
+  .machinesTitle {
+    font-size: 1.75rem;
+  }
+  
+  .filtersSection {
+    padding: 1.5rem;
+  }
+  
+  .searchInputGroup {
+    max-width: 500px;
+  }
+  
+  .tableInfo {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 767px) {
+  .machinesContainer {
+    padding: 0 1rem;
+  }
+  
+  .machinesTitle {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .filtersSection {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filtersTitle {
+    font-size: 1rem;
+  }
+  
+  .searchInputGroup {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .searchInput {
+    padding: 0.875rem 1rem;
+    font-size: 16px; /* Предотвращает зум на iOS */
+  }
+  
+  .searchButton,
+  .resetButton {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .machinesTable {
+    font-size: 0.875rem;
+    min-width: 700px;
+  }
+  
+  .tableHeaderCell,
+  .tableCell {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .serialCell {
+    font-size: 16px;
+  }
+  
+  .componentModel {
+    font-size: 14px;
+  }
+  
+  .componentSerial {
+    font-size: 12px;
+  }
+  
+  .successMessage {
+    padding: 0.75rem;
+    font-size: 14px;
+  }
+  
+  .loadingState,
+  .errorState,
+  .emptyState {
+    padding: 2rem 1rem;
+  }
+  
+  .errorIcon,
+  .emptyIcon {
+    font-size: 2.5rem;
+  }
+}
+
+/* УМЕНЬШАЕМ ОТСТУПЫ ДЛЯ КОМПАКТНОСТИ */
+.machinesSection {
+  padding: 10px 0; /* Было 20px */
+  background: white;
+  margin-bottom: 0;
+}
+
+.machinesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Было 2rem */
+}
+
+.machinesHeader {
+  margin-bottom: 1rem; /* Было 2rem */
+}
+
+.machinesTitle {
+  font-size: 1.5rem; /* Было 2rem */
+  margin-bottom: 0.5rem;
+}
+
+.filtersSection {
+  padding: 1.5rem; /* Было 2rem */
+  margin-bottom: 1.5rem; /* Было 3rem */
+}
+
+.loadingState,
+.errorState,
+.emptyState {
+  padding: 2rem 1rem; /* Было 3rem */
+}
+
+/* УБИРАЕМ ЛИШНИЕ ОТСТУПЫ У ФУТЕРА */
+.tableFooter {
+  padding: 15px 20px; /* Было 20px 24px */
+}
